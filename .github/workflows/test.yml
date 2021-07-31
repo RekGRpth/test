@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - a
+      - b
+  workflow_dispatch:
+jobs:
+  test:
+    concurrency:
+      cancel-in-progress: true
+      group: ${{ github.ref }}
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
