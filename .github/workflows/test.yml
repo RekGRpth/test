@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: docker/metadata-action@v3
       - uses: actions/checkout@v2
         with:
           ref: b
+      - uses: docker/metadata-action@v3
+        with:
+          tags:
+            - type=raw,value=oracle
