@@ -16,10 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: docker/metadata-action@v3
+        with:
+          images: ghcr.io/${{ github.repository }}
       - uses: actions/checkout@v2
         with:
           ref: b
       - uses: docker/metadata-action@v3
         with:
+          images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=oracle
