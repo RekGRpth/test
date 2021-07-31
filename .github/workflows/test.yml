@@ -21,5 +21,5 @@ jobs:
           ref: b
       - uses: docker/metadata-action@v3
         with:
-          tags:
-            - type=raw,value=oracle
+          tags: |
+            type=raw,value=oracle
