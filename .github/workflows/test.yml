@@ -10,4 +10,4 @@ jobs:
       packages: write
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.event_type }}"
+      - run: echo "${{ toJSON(github.event) }}"
