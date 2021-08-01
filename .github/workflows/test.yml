@@ -1,7 +1,10 @@
 on:
+  push:
+    branches:
+      - master
   repository_dispatch:
     types:
-      - latest
+      - master
   workflow_dispatch:
 jobs:
   test:
@@ -10,5 +13,8 @@ jobs:
       packages: write
     runs-on: ubuntu-latest
     steps:
-#      - run: echo "${{ toJSON(github.event) }}"
-      - run: echo "${{ github.event.client_payload.repository }}"
+      - run: echo "${{ github.event.actor.login }}"
+      - run: echo "${{ github.event.repo.name }}"
+      - run: echo "${{ github.event.type }}"
+      - run: echo "${{ github.event.client_payload }}"
+      - run: echo "${{ toJSON(github.event) }}"
