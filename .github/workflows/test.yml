@@ -8,12 +8,14 @@ on:
   workflow_dispatch:
 jobs:
   test:
+    name: ${{ github.event.repository.full_name }} from ${{ github.event.client_payload.repository }}
     permissions:
       contents: read
       packages: write
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.repository.full_name }}"
+      - run: echo "${{ github.event.repository.full_name }} from ${{ github.event.client_payload.repository }}"
+#      - run: echo "${{ github.event.repository.full_name }}"
 #      - run: echo "${{ github.event.actor.login }}"
 #      - run: echo "${{ github.event.repo.name }}"
 #      - run: echo "${{ github.event.type }}"
