@@ -13,8 +13,9 @@ jobs:
       packages: write
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.actor.login }}"
-      - run: echo "${{ github.event.repo.name }}"
-      - run: echo "${{ github.event.type }}"
-      - run: echo "${{ github.event.client_payload }}"
+      - run: echo "${{ github.event.repository.full_name }}"
+#      - run: echo "${{ github.event.actor.login }}"
+#      - run: echo "${{ github.event.repo.name }}"
+#      - run: echo "${{ github.event.type }}"
+      - run: echo "${{ toJSON(github.event.client_payload) }}"
       - run: echo "${{ toJSON(github.event) }}"
