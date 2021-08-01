@@ -1,3 +1,4 @@
+name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.repository.name }}
 on:
   push:
     branches:
@@ -8,7 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   test:
-    name: ${{ github.event_name }} ${{ github.event.repository.name }} ${{ github.event.client_payload.repository }}
+    name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.repository.name }}
     permissions:
       contents: read
       packages: write
