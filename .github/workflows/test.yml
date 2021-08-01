@@ -1,0 +1,13 @@
+on:
+  repository_dispatch:
+    types:
+      - latest
+  workflow_dispatch:
+jobs:
+  test:
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      -run: echo "${{ github.event }}"
