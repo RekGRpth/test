@@ -10,4 +10,5 @@ jobs:
       packages: write
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ toJSON(github.event) }}"
+#      - run: echo "${{ toJSON(github.event) }}"
+      - run: echo "${{ github.event.client_payload.repository }}"
