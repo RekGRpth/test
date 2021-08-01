@@ -10,5 +10,4 @@ jobs:
       packages: write
     runs-on: ubuntu-latest
     steps:
-#      - uses: actions/checkout@v2
-      - run: echo "${{ github.event }}"
+      - run: echo "${{ github.event.event_type }}"
