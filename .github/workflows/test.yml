@@ -1,4 +1,4 @@
-name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.repository.name }}
+name: Docker
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   test:
-    name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.repository.name }}
+    name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.branch }}
     permissions:
       contents: read
       packages: write
