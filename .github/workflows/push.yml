@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+    types:
+      - master
+  workflow_dispatch:
+jobs:
+  test:
+    name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.branch }}
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(github) }}"
