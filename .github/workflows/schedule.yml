@@ -6,5 +6,6 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - run: env
+      - run: env | sort
       - run: echo "${{ toJSON(github) }}"
+      - uses: rekgrpth/git-clone-action@v1
