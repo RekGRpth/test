@@ -9,13 +9,10 @@ on:
 jobs:
   test:
     name: ${{ github.event.client_payload.repository }} ${{ github.event_name }} ${{ github.event.branch }}
-    permissions:
-      contents: read
-      packages: write
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
     runs-on: ubuntu-latest
     steps:
       - run: env | sort
       - run: echo "${{ toJSON(github) }}"
       - uses: rekgrpth/git-clone-action@v1
-#        with:
-#          branch: a

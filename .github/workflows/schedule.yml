@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
 jobs:
   merge:
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
     runs-on: ubuntu-latest
     steps:
       - run: env | sort
