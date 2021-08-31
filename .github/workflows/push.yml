@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-      - run: ls -lan
+      - run: ls -lan "${HOME}"
       - run: env | sort
       - run: echo "${{ toJSON(github) }}"
       - uses: rekgrpth/git-clone-action@v1
