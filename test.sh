@@ -42,11 +42,9 @@ git clone https://github.com/RekGRpth/ngx_http_zip_var_module.git; \
 git clone https://github.com/RekGRpth/ngx_postgres.git; \
 git clone https://github.com/RekGRpth/njs.git; \
 git clone https://github.com/RekGRpth/set-misc-nginx-module.git; \
-#cd "${HOME}/src/nginx"; \
 find "${HOME}/src/nginx/modules" -type d -name "t" | grep -v "\.git" | while read -r NAME; do
-#    DIR="$(dirname "${NAME}")"
-#    cd "${HOME}/src/nginx/${DIR}"
-    cd "${NAME}"
-    prove .
+    DIR="$(dirname "${NAME}")"
+    cd "${DIR}"
+    prove t
 done
 echo done
