@@ -18,3 +18,4 @@ jobs:
       - run: echo "${{ toJSON(github) }}"
       - uses: rekgrpth/git-clone-action@v1
       - run: ls -Rlan "${HOME}"
+      - run: "${GITHUB_WORKSPACE}/.github/test.sh"
